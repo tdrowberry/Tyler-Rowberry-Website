@@ -3,7 +3,7 @@ import { ArrowUpRight, Download, Mail } from "lucide-react";
 
 import contactBg from "../assets/backgrounds/contact-bg.jpg";
 import candidPortrait from "../assets/photos/tyler-candid-portrait.jpg";
-import { EMAIL_URL, LINKEDIN_URL, PageIntro, RESUME_URL } from "../components/site-shell";
+import { EMAIL_URL, LINKEDIN_URL, PageBackground, PageIntro, RESUME_URL } from "../components/site-shell";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -23,7 +23,8 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   return (
     <main className="mx-auto max-w-6xl px-5 sm:px-8">
-      <PageIntro eyebrow="Contact" background={contactBg} title={<>A good conversation<br /><span className="font-body font-normal italic text-muted-foreground">is a useful place to start.</span></>}>
+      <PageBackground image={contactBg}>
+      <PageIntro eyebrow="Contact" title={<>A good conversation<br /><span className="font-body font-normal italic text-muted-foreground">is a useful place to start.</span></>}>
         I&apos;m especially interested in corporate strategy opportunities in technology and conversations with people solving consequential problems.
       </PageIntro>
 
@@ -48,6 +49,7 @@ function ContactPage() {
           <p className="mt-4 max-w-2xl text-xl leading-relaxed">Completing the one-year MBA program at Northwestern University&apos;s Kellogg School of Management, graduating June 2027.</p>
         </div>
       </section>
+      </PageBackground>
     </main>
   );
 }

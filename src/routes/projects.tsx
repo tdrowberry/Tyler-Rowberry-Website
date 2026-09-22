@@ -3,7 +3,7 @@ import { ArrowUpRight, ChevronDown, X } from "lucide-react";
 import { useState } from "react";
 
 import projectsBg from "../assets/backgrounds/writing-bg.jpg";
-import { LINKEDIN_URL, PageIntro } from "../components/site-shell";
+import { LINKEDIN_URL, PageBackground, PageIntro } from "../components/site-shell";
 import { Button } from "../components/ui/button";
 
 export const Route = createFileRoute("/projects")({
@@ -84,7 +84,8 @@ function GameEmbed({
 function ProjectsPage() {
   return (
     <main className="mx-auto max-w-6xl px-5 sm:px-8">
-      <PageIntro eyebrow="Projects" background={projectsBg} title={<>Built to learn<br /><span className="font-body font-normal italic text-muted-foreground">by shipping.</span></>}>
+      <PageBackground image={projectsBg}>
+      <PageIntro eyebrow="Projects" title={<>Built to learn<br /><span className="font-body font-normal italic text-muted-foreground">by shipping.</span></>}>
         I&apos;m currently taking AI Ops, and I&apos;ll be doing AI Labs while at Kellogg—I&apos;m excited to merge strategy with technology and AI in a professional role. A couple of things I&apos;ve built along the way, below.
       </PageIntro>
 
@@ -109,6 +110,7 @@ function ProjectsPage() {
         note="This one needs other players to actually play a round—open it, create a room, and share the link or QR code with people nearby. It's hosted on a free server that naps when idle, so the first load after a quiet stretch can take 30–60 seconds to wake up."
         url="https://barnyard-dice.onrender.com/"
       />
+      </PageBackground>
     </main>
   );
 }

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, BookOpen } from "lucide-react";
 
 import readingBg from "../assets/backgrounds/reading-bg.jpg";
-import { PageIntro } from "../components/site-shell";
+import { PageBackground, PageIntro } from "../components/site-shell";
 
 const READING_URL = "https://tdrowberry.github.io/Rowberrys-Reading-Recommendations/";
 
@@ -24,7 +24,8 @@ export const Route = createFileRoute("/reading")({
 function ReadingPage() {
   return (
     <main className="mx-auto max-w-6xl px-5 sm:px-8">
-      <PageIntro eyebrow="On my bookshelf" background={readingBg} title={<>Reading<br /><span className="font-body font-normal italic text-muted-foreground">recommendations.</span></>}>
+      <PageBackground image={readingBg}>
+      <PageIntro eyebrow="On my bookshelf" title={<>Reading<br /><span className="font-body font-normal italic text-muted-foreground">recommendations.</span></>}>
         Books I&apos;ve read and recommend, embedded below without leaving this site.
       </PageIntro>
 
@@ -50,6 +51,7 @@ function ReadingPage() {
           />
         </div>
       </section>
+      </PageBackground>
     </main>
   );
 }

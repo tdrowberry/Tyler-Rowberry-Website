@@ -3,7 +3,7 @@ import { ArrowRight, ArrowUpRight, Download } from "lucide-react";
 
 import overviewBg from "../assets/backgrounds/overview-bg.jpg";
 import headshot from "../assets/photos/tyler-professional-headshot.jpg";
-import { LINKEDIN_URL, RESUME_URL } from "../components/site-shell";
+import { LINKEDIN_URL, PageBackground, RESUME_URL } from "../components/site-shell";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,14 +23,8 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="mx-auto max-w-6xl px-5 sm:px-8">
-      <section className="page-reveal relative grid gap-10 overflow-hidden border-b border-border py-14 sm:py-20 lg:grid-cols-12 lg:items-center lg:py-24">
-        <img
-          src={overviewBg}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10 hidden size-full object-cover object-right-bottom sm:block"
-        />
-        <div className="pointer-events-none absolute inset-0 -z-10 hidden bg-gradient-to-r from-background from-40% via-background/85 via-65% to-background/10 sm:block" />
+      <PageBackground image={overviewBg}>
+      <section className="page-reveal grid gap-10 border-b border-border py-14 sm:py-20 lg:grid-cols-12 lg:items-center lg:py-24">
         <div className="lg:col-span-7">
           <p className="mb-4 font-mono text-xs uppercase text-accent">Briefing note · MBA 2027</p>
           <h1 className="text-balance font-display text-5xl font-extrabold leading-[0.95] sm:text-7xl lg:text-8xl">
@@ -84,6 +78,7 @@ function Index() {
           </div>
         </div>
       </section>
+      </PageBackground>
     </main>
   );
 }

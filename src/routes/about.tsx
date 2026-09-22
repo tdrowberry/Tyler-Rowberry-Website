@@ -6,7 +6,7 @@ import withChild from "../assets/photos/tyler-with-child.jpg";
 import missionaryGroup from "../assets/photos/madagascar-missionary-group.jpg";
 import operationSmile from "../assets/photos/operation-smile-madagascar.jpg";
 import innovationPhoto from "../assets/photos/strategy-innovation-studio.jpeg";
-import { PageIntro } from "../components/site-shell";
+import { PageBackground, PageIntro } from "../components/site-shell";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -26,7 +26,8 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <main className="mx-auto max-w-6xl px-5 sm:px-8">
-      <PageIntro eyebrow="Beyond the resume" background={aboutBg} title={<>Globally curious.<br /><span className="font-body font-normal italic text-muted-foreground">Grounded in service.</span></>}>
+      <PageBackground image={aboutBg}>
+      <PageIntro eyebrow="Beyond the resume" title={<>Globally curious.<br /><span className="font-body font-normal italic text-muted-foreground">Grounded in service.</span></>}>
         My approach to strategy has been shaped as much by listening across cultures as by models, frameworks, and boardroom conversations.
       </PageIntro>
 
@@ -120,6 +121,7 @@ function AboutPage() {
           </dl>
         </div>
       </section>
+      </PageBackground>
     </main>
   );
 }

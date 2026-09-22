@@ -114,38 +114,33 @@ export function SiteShell({ children }: { children: ReactNode }) {
   );
 }
 
-export function PageIntro({
-  eyebrow,
-  title,
-  children,
-  background,
-}: {
-  eyebrow: string;
-  title: ReactNode;
-  children: ReactNode;
-  /** Illustration confined to the art's own right/bottom edge, generous empty space
-   * elsewhere -- see each background's own generation prompt for the exact framing.
-   * Hidden below sm: at phone width there's no room left for both the art and the
-   * text before one crowds out the other, so the plain background color takes over
-   * instead (it already matches the art's own base tone, so nothing looks unfinished). */
-  background?: string;
-}) {
+export function PageIntro({ eyebrow, title, children }: { eyebrow: string; title: ReactNode; children: ReactNode }) {
   return (
-    <section className={`page-reveal relative overflow-hidden border-b border-border py-14 sm:py-20 ${background ? "sm:min-h-[420px]" : ""}`}>
-      {background ? (
-        <>
-          <img
-            src={background}
-            alt=""
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 -z-10 hidden size-full object-cover object-right-bottom sm:block"
-          />
-          <div className="pointer-events-none absolute inset-0 -z-10 hidden bg-gradient-to-r from-background from-40% via-background/85 via-65% to-background/10 sm:block" />
-        </>
-      ) : null}
+    <section className="page-reveal border-b border-border py-14 sm:py-20">
       <p className="mb-4 font-mono text-[10px] uppercase text-accent sm:text-xs">{eyebrow}</p>
       <h1 className="max-w-4xl text-balance font-display text-5xl font-extrabold leading-[0.98] sm:text-7xl">{title}</h1>
       <div className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">{children}</div>
     </section>
+  );
+}
+
+/** Wraps a page's entire <main> content (everything down to the footer, which lives
+ * outside this and stays untouched) in the warm surface-tint color, full-bleed edge to
+ * edge, so the page reads as one continuous toned surface from the header down to the
+ * footer -- not just behind the hero. The illustration itself sits as an accent across
+ * the top, cropped to a fixed band and faded into the tint on its left and bottom edges
+ * so there's no hard seam between the art and the flat color that carries the rest of
+ * the page. */
+export function PageBackground({ image, children }: { image: string; children: ReactNode }) {
+  return (
+    <div className="relative isolate">
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-20 w-screen -translate-x-1/2 bg-surface-tint" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-[480px] overflow-hidden sm:block">
+        <img src={image} alt="" aria-hidden="true" className="ml-auto h-full w-[65%] max-w-3xl object-cover object-right" />
+        <div className="absolute inset-0 bg-gradient-to-r from-surface-tint from-10% via-transparent via-60%" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-surface-tint to-transparent" />
+      </div>
+      {children}
+    </div>
   );
 }
