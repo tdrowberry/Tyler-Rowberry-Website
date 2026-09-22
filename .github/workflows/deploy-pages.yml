@@ -1,0 +1,61 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deployment at a time; let an in-progress run finish rather than
+# cancelling it mid-deploy (cancel-in-progress only affects queued/build runs).
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Build static site (prerendered, GitHub Pages subpath)
+        run: npm run build
+        env:
+          # Repo name -> the subpath GitHub Pages serves a project site from:
+          # https://tdrowberry.github.io/Tyler-Rowberry-Website/
+          GH_PAGES_BASE: /Tyler-Rowberry-Website/
+
+      - name: Add SPA fallback for unmatched paths
+        # GitHub Pages serves 404.html (with a real 404 status) for any path
+        # that doesn't match a file. _shell.html is a route-neutral prerendered
+        # shell (see vite.config.ts's `spa` option) that hydrates correctly for
+        # any URL -- unlike reusing a specific page's own prerendered HTML,
+        # which crashes on hydration once the URL doesn't match that page.
+        run: cp .output/public/_shell.html .output/public/404.html
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

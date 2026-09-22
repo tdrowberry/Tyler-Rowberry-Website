@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { LINKEDIN_URL, PageIntro } from "../components/site-shell";
@@ -36,7 +36,7 @@ function WritingPage() {
               <p className="max-w-xl text-xl leading-relaxed">I&apos;m preparing the first entries for this collection. In the meantime, LinkedIn is the best place to follow current professional updates and join the conversation.</p>
               <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 font-mono text-xs uppercase">
                 <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="link-underline inline-flex items-center gap-2">Follow on LinkedIn <ArrowUpRight className="size-4" /></a>
-                <a href="/reading" className="link-underline inline-flex items-center gap-2">Reading recommendations <ArrowRight className="size-4" /></a>
+                <Link to="/reading" className="link-underline inline-flex items-center gap-2">Reading recommendations <ArrowRight className="size-4" /></Link>
               </div>
             </div>
             <div className="mt-8 grid gap-px border border-border bg-border sm:grid-cols-3">

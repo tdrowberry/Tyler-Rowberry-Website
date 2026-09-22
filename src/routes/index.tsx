@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Download } from "lucide-react";
 
 import headshot from "../assets/photos/tyler-professional-headshot.jpg";
@@ -73,9 +73,9 @@ function Index() {
         <div className="md:col-span-8">
           <p className="max-w-2xl text-xl leading-relaxed">At Kellogg, I&apos;m deepening my focus in strategy and finance while pursuing corporate strategy roles in technology—work that connects long-range choices with practical execution.</p>
           <div className="mt-6 flex flex-wrap gap-x-8 gap-y-4 font-mono text-xs uppercase">
-            <a href="/experience" className="link-underline inline-flex items-center gap-2">Career record <ArrowRight className="size-4" /></a>
-            <a href="/about" className="link-underline inline-flex items-center gap-2">Beyond the résumé <ArrowRight className="size-4" /></a>
-            <a href="/writing" className="link-underline inline-flex items-center gap-2">Writing & updates <ArrowRight className="size-4" /></a>
+            <Link to="/experience" className="link-underline inline-flex items-center gap-2">Career record <ArrowRight className="size-4" /></Link>
+            <Link to="/about" className="link-underline inline-flex items-center gap-2">Beyond the résumé <ArrowRight className="size-4" /></Link>
+            <Link to="/writing" className="link-underline inline-flex items-center gap-2">Writing & updates <ArrowRight className="size-4" /></Link>
           </div>
         </div>
       </section>

@@ -10,6 +10,9 @@ export const getRouter = () => {
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
+    // Matches vite.config.ts's `base` automatically (Vite injects BASE_URL) so
+    // links/navigation work whether the app is served at "/" or a subpath.
+    basepath: import.meta.env.BASE_URL,
   });
 
   return router;
