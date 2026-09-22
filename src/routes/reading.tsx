@@ -23,7 +23,7 @@ export const Route = createFileRoute("/reading")({
 function ReadingPage() {
   return (
     <main className="mx-auto max-w-6xl px-5 sm:px-8">
-      <PageIntro eyebrow="05 / On my bookshelf" title={<>Reading<br /><span className="font-body font-normal italic text-muted-foreground">recommendations.</span></>}>
+      <PageIntro eyebrow="On my bookshelf" title={<>Reading<br /><span className="font-body font-normal italic text-muted-foreground">recommendations.</span></>}>
         Books I&apos;ve read and recommend, embedded below without leaving this site.
       </PageIntro>
 

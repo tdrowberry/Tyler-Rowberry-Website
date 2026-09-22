@@ -21,7 +21,7 @@ export const Route = createFileRoute("/writing")({
 function WritingPage() {
   return (
     <main className="mx-auto max-w-6xl px-5 sm:px-8">
-      <PageIntro eyebrow="04 / Field notes" title={<>Ideas in progress.<br /><span className="font-body font-normal italic text-muted-foreground">Updates from the field.</span></>}>
+      <PageIntro eyebrow="Field notes" title={<>Ideas in progress.<br /><span className="font-body font-normal italic text-muted-foreground">Updates from the field.</span></>}>
         This is where I&apos;ll collect writing on strategy, technology, global experience, and the lessons I&apos;m carrying forward.
       </PageIntro>
 

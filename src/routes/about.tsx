@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import missionaryGroup from "../assets/photos/madagascar-missionary-group.jpg";
+import lemurPhoto from "../assets/photos/tyler-lemur-icon.jpg";
+import withChild from "../assets/photos/tyler-with-child.jpg";
 import operationSmile from "../assets/photos/operation-smile-madagascar.jpg";
 import innovationPhoto from "../assets/photos/strategy-innovation-studio.jpeg";
 import { PageIntro } from "../components/site-shell";
@@ -23,18 +24,25 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <main className="mx-auto max-w-6xl px-5 sm:px-8">
-      <PageIntro eyebrow="03 / Beyond the résumé" title={<>Globally curious.<br /><span className="font-body font-normal italic text-muted-foreground">Grounded in service.</span></>}>
+      <PageIntro eyebrow="Beyond the resume" title={<>Globally curious.<br /><span className="font-body font-normal italic text-muted-foreground">Grounded in service.</span></>}>
         My approach to strategy has been shaped as much by listening across cultures as by models, frameworks, and boardroom conversations.
       </PageIntro>
 
       <section className="grid gap-10 border-b border-border py-14 sm:py-20 md:grid-cols-12">
-        <figure className="md:col-span-5">
-          <img src={missionaryGroup} alt="Tyler Rowberry with fellow missionaries and local church members in Madagascar" className="aspect-[4/3] w-full rounded-sm object-cover" />
-          <figcaption className="mt-3 font-mono text-[9px] uppercase text-muted-foreground">Serving as a missionary in Madagascar.</figcaption>
-        </figure>
+        <div className="grid grid-cols-2 gap-3 md:col-span-5 md:self-start">
+          <figure>
+            <img src={lemurPhoto} alt="Golden lemur in Madagascar foliage" className="aspect-[4/5] w-full rounded-sm object-cover object-[50%_34%]" />
+            <figcaption className="mt-3 font-mono text-[9px] uppercase text-muted-foreground">A nod to Madagascar.</figcaption>
+          </figure>
+          <figure>
+            <img src={withChild} alt="Tyler Rowberry with one of his four children" className="aspect-[4/5] w-full rounded-sm object-cover" />
+            <figcaption className="mt-3 font-mono text-[9px] uppercase text-muted-foreground">Dad to four.</figcaption>
+          </figure>
+        </div>
         <div className="space-y-6 text-lg leading-relaxed md:col-span-7 md:pt-6">
           <p>I spent two years serving as a volunteer missionary in Madagascar and Zambia. That experience sharpened my ability to listen, adapt, and build trust across unfamiliar contexts.</p>
           <p>Since then, my work has taken me from healthcare and industrial diligence in the United States to the operational realities of opening an office in Saudi Arabia. I&apos;ve also lived or worked in the United Kingdom and United Arab Emirates.</p>
+          <p>Closer to home, I&apos;m a dad to four kids—easily my favorite role.</p>
           <p className="border-l-2 border-accent pl-6 font-body italic text-muted-foreground">"Aleo very tsikalakalam-bola, toy izay very tsikalakalam-pihavanana."</p>
           <p className="font-mono text-[10px] uppercase text-muted-foreground">A Malagasy proverb about valuing relationships over material loss</p>
         </div>

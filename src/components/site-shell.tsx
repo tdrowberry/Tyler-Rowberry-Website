@@ -10,12 +10,12 @@ export const EMAIL_URL = "mailto:tdrowberry@gmail.com";
 export const RESUME_URL = resumePdf;
 
 const navigation = [
-  { to: "/", label: "Overview", number: "01" },
-  { to: "/experience", label: "Experience", number: "02" },
-  { to: "/about", label: "About", number: "03" },
-  { to: "/writing", label: "Writing", number: "04" },
-  { to: "/reading", label: "Reading", number: "05" },
-  { to: "/contact", label: "Contact", number: "06" },
+  { to: "/", label: "Overview" },
+  { to: "/experience", label: "Experience" },
+  { to: "/about", label: "About" },
+  { to: "/writing", label: "Writing" },
+  { to: "/reading", label: "Reading" },
+  { to: "/contact", label: "Contact" },
 ] as const;
 
 export function LemurIdentity({ className = "size-9" }: { className?: string }) {
@@ -47,7 +47,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 className="font-mono text-[10px] uppercase text-muted-foreground transition-colors hover:text-accent"
                 activeProps={{ className: "text-accent" }}
               >
-                {item.number} {item.label}
+                {item.label}
               </Link>
             ))}
           </nav>
@@ -70,9 +70,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
                   key={item.to}
                   to={item.to}
                   onClick={() => setMenuOpen(false)}
-                  className="flex items-center justify-between border-b border-border py-3 font-display font-bold"
+                  className="block border-b border-border py-3 font-display font-bold"
                 >
-                  {item.label}<span className="font-mono text-[10px] text-accent">{item.number}</span>
+                  {item.label}
                 </Link>
               ))}
             </div>
@@ -95,13 +95,13 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 Email <Mail className="size-4" />
               </a>
               <a href={RESUME_URL} download="Tyler-Rowberry-Resume.pdf" className="link-underline inline-flex items-center gap-2 text-lg">
-                Résumé <Download className="size-4" />
+                Resume <Download className="size-4" />
               </a>
             </div>
           </div>
           <div className="md:text-right">
             <p className="max-w-sm text-sm leading-relaxed text-background/65 md:ml-auto">
-              Based in Evanston, Illinois. Pursuing opportunities at the intersection of corporate strategy, technology, and global impact.
+              Pursuing opportunities at the intersection of corporate strategy, technology, and global impact.
             </p>
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase text-background/60 md:justify-end">
               <p>© 2026 Tyler Rowberry</p>

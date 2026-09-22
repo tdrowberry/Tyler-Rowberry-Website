@@ -33,15 +33,12 @@ function Index() {
           </p>
           <div className="mt-8 flex flex-wrap gap-6 font-mono text-xs uppercase">
             <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="link-underline inline-flex items-center gap-2">LinkedIn <ArrowUpRight className="size-4" /></a>
-            <a href={RESUME_URL} download="Tyler-Rowberry-Resume.pdf" className="link-underline inline-flex items-center gap-2">Download résumé <Download className="size-4" /></a>
+            <a href={RESUME_URL} download="Tyler-Rowberry-Resume.pdf" className="link-underline inline-flex items-center gap-2">Download resume <Download className="size-4" /></a>
           </div>
         </div>
         <div className="lg:col-span-4 lg:flex lg:items-end lg:justify-end">
           <figure className="w-full max-w-sm overflow-hidden rounded-sm border border-border bg-card">
             <img src={headshot} alt="Tyler Rowberry" className="aspect-[4/5] w-full object-cover object-[50%_15%]" />
-            <figcaption className="flex items-center justify-between p-4 font-mono text-[9px] uppercase text-muted-foreground">
-              <span>Tyler Rowberry</span><span>TR / 01</span>
-            </figcaption>
           </figure>
         </div>
       </section>
@@ -74,7 +71,7 @@ function Index() {
           <p className="max-w-2xl text-xl leading-relaxed">At Kellogg, I&apos;m deepening my focus in strategy and finance while pursuing corporate strategy roles in technology—work that connects long-range choices with practical execution.</p>
           <div className="mt-6 flex flex-wrap gap-x-8 gap-y-4 font-mono text-xs uppercase">
             <Link to="/experience" className="link-underline inline-flex items-center gap-2">Career record <ArrowRight className="size-4" /></Link>
-            <Link to="/about" className="link-underline inline-flex items-center gap-2">Beyond the résumé <ArrowRight className="size-4" /></Link>
+            <Link to="/about" className="link-underline inline-flex items-center gap-2">Beyond the resume <ArrowRight className="size-4" /></Link>
             <Link to="/writing" className="link-underline inline-flex items-center gap-2">Writing & updates <ArrowRight className="size-4" /></Link>
           </div>
         </div>
