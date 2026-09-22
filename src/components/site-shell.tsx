@@ -30,7 +30,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen overflow-x-clip bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
           <Link to="/" className="flex items-center gap-3" onClick={() => setMenuOpen(false)}>
@@ -125,20 +125,19 @@ export function PageIntro({ eyebrow, title, children }: { eyebrow: string; title
 }
 
 /** Wraps a page's entire <main> content (everything down to the footer, which lives
- * outside this and stays untouched) in the warm surface-tint color, full-bleed edge to
- * edge, so the page reads as one continuous toned surface from the header down to the
- * footer -- not just behind the hero. The illustration itself sits as an accent across
- * the top, cropped to a fixed band and faded into the tint on its left and bottom edges
- * so there's no hard seam between the art and the flat color that carries the rest of
- * the page. */
+ * outside this and stays untouched) in the page's illustration, full-bleed edge to edge.
+ * The art is a viewport-sized sticky layer, so it fills the screen behind the content the
+ * whole way down instead of stretching across a tall page, with a light surface-tint
+ * wash for text legibility. SiteShell's overflow-x-clip absorbs the w-screen breakout's
+ * scrollbar-width overshoot (clip, not hidden, so sticky keeps working). */
 export function PageBackground({ image, children }: { image: string; children: ReactNode }) {
   return (
     <div className="relative isolate">
-      <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-20 w-screen -translate-x-1/2 bg-surface-tint" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-[480px] overflow-hidden sm:block">
-        <img src={image} alt="" aria-hidden="true" className="ml-auto h-full w-[65%] max-w-3xl object-cover object-right" />
-        <div className="absolute inset-0 bg-gradient-to-r from-surface-tint from-10% via-transparent via-60%" />
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-surface-tint to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2 bg-surface-tint">
+        <div className="sticky top-0 h-screen">
+          <img src={image} alt="" aria-hidden="true" className="h-full w-full object-cover object-right" />
+          <div className="absolute inset-0 bg-surface-tint/35 dark:bg-surface-tint/85" />
+        </div>
       </div>
       {children}
     </div>
