@@ -136,7 +136,7 @@ export function PageBackground({ image, children }: { image: string; children: R
       <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2 bg-surface-tint">
         <div className="sticky top-0 h-screen">
           <img src={image} alt="" aria-hidden="true" className="h-full w-full object-cover object-right" />
-          <div className="absolute inset-0 bg-surface-tint/35 dark:bg-surface-tint/85" />
+          <div className="absolute inset-0 bg-surface-tint/45 dark:bg-surface-tint/90" />
         </div>
       </div>
       {children}
