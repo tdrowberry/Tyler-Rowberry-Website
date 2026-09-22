@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import experienceBg from "../assets/backgrounds/experience-bg.jpg";
 import { PageIntro } from "../components/site-shell";
 
 export const Route = createFileRoute("/experience")({
@@ -60,7 +61,7 @@ const roles = [
 function ExperiencePage() {
   return (
     <main className="mx-auto max-w-6xl px-5 sm:px-8">
-      <PageIntro eyebrow="Career record" title={<>Strategy in practice,<br /><span className="font-body font-normal italic text-muted-foreground">from diligence to transformation.</span></>}>
+      <PageIntro eyebrow="Career record" background={experienceBg} title={<>Strategy in practice,<br /><span className="font-body font-normal italic text-muted-foreground">from diligence to transformation.</span></>}>
         Four years at L.E.K. built a foundation in rigorous analysis, executive communication, and leading through ambiguity.
       </PageIntro>
 

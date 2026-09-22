@@ -4,7 +4,16 @@
 //     nitro (build-only using cloudflare as a default target), VITE_* env injection, @ path alias,
 //     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+
+// The wrapper's own "@" alias resolves against process.cwd(), which is only this
+// project's root when something is actually launched from inside it. A launcher
+// that starts the dev server from elsewhere (passing this folder as an argument,
+// not as its own cwd) leaves process.cwd() pointed at the wrong directory, and
+// every "@/..." import fails to resolve. Override it with a path resolved from
+// this config file's own location instead, which is correct regardless of cwd.
+const srcDir = fileURLToPath(new URL("./src", import.meta.url));
 
 // GitHub Pages serves a project repo (not a <user>.github.io repo) from a subpath
 // matching the repo name, e.g. https://tdrowberry.github.io/Tyler-Rowberry-Website/.
@@ -44,5 +53,5 @@ export default defineConfig({
     // router state. The deploy workflow copies _shell.html to 404.html.
     spa: isStaticBuild ? { enabled: true } : undefined,
   },
-  vite: { base },
+  vite: { base, resolve: { alias: { "@": srcDir } } },
 });

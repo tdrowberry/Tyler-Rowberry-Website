@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Download, Mail } from "lucide-react";
 
+import contactBg from "../assets/backgrounds/contact-bg.jpg";
+import candidPortrait from "../assets/photos/tyler-candid-portrait.jpg";
 import { EMAIL_URL, LINKEDIN_URL, PageIntro, RESUME_URL } from "../components/site-shell";
 
 export const Route = createFileRoute("/contact")({
@@ -21,7 +23,7 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   return (
     <main className="mx-auto max-w-6xl px-5 sm:px-8">
-      <PageIntro eyebrow="Contact" title={<>A good conversation<br /><span className="font-body font-normal italic text-muted-foreground">is a useful place to start.</span></>}>
+      <PageIntro eyebrow="Contact" background={contactBg} title={<>A good conversation<br /><span className="font-body font-normal italic text-muted-foreground">is a useful place to start.</span></>}>
         I&apos;m especially interested in corporate strategy opportunities in technology and conversations with people solving consequential problems.
       </PageIntro>
 
@@ -37,8 +39,14 @@ function ContactPage() {
         </a>
       </section>
 
-      <section className="py-14 sm:py-20">
-        <div className="grid gap-8 md:grid-cols-12"><p className="font-mono text-[10px] uppercase text-accent md:col-span-4">Timing</p><p className="max-w-2xl text-xl leading-relaxed md:col-span-8">Completing the one-year MBA program at Northwestern University&apos;s Kellogg School of Management, graduating June 2027.</p></div>
+      <section className="grid gap-10 py-14 sm:py-20 md:grid-cols-12">
+        <figure className="md:col-span-5">
+          <img src={candidPortrait} alt="Tyler Rowberry" className="aspect-[4/5] w-full rounded-sm object-cover" />
+        </figure>
+        <div className="md:col-span-7 md:pt-6">
+          <p className="font-mono text-[10px] uppercase text-accent">Timing</p>
+          <p className="mt-4 max-w-2xl text-xl leading-relaxed">Completing the one-year MBA program at Northwestern University&apos;s Kellogg School of Management, graduating June 2027.</p>
+        </div>
       </section>
     </main>
   );

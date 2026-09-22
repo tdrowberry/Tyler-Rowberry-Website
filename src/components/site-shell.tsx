@@ -13,7 +13,7 @@ const navigation = [
   { to: "/", label: "Overview" },
   { to: "/experience", label: "Experience" },
   { to: "/about", label: "About" },
-  { to: "/writing", label: "Writing" },
+  { to: "/projects", label: "Projects" },
   { to: "/reading", label: "Reading" },
   { to: "/contact", label: "Contact" },
 ] as const;
@@ -114,9 +114,35 @@ export function SiteShell({ children }: { children: ReactNode }) {
   );
 }
 
-export function PageIntro({ eyebrow, title, children }: { eyebrow: string; title: ReactNode; children: ReactNode }) {
+export function PageIntro({
+  eyebrow,
+  title,
+  children,
+  background,
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  children: ReactNode;
+  /** Illustration confined to the art's own right/bottom edge, generous empty space
+   * elsewhere -- see each background's own generation prompt for the exact framing.
+   * Hidden below sm: at phone width there's no room left for both the art and the
+   * text before one crowds out the other, so the plain background color takes over
+   * instead (it already matches the art's own base tone, so nothing looks unfinished). */
+  background?: string;
+}) {
   return (
-    <section className="page-reveal border-b border-border py-14 sm:py-20">
+    <section className={`page-reveal relative overflow-hidden border-b border-border py-14 sm:py-20 ${background ? "sm:min-h-[420px]" : ""}`}>
+      {background ? (
+        <>
+          <img
+            src={background}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 -z-10 hidden size-full object-cover object-right-bottom sm:block"
+          />
+          <div className="pointer-events-none absolute inset-0 -z-10 hidden bg-gradient-to-r from-background from-40% via-background/85 via-65% to-background/10 sm:block" />
+        </>
+      ) : null}
       <p className="mb-4 font-mono text-[10px] uppercase text-accent sm:text-xs">{eyebrow}</p>
       <h1 className="max-w-4xl text-balance font-display text-5xl font-extrabold leading-[0.98] sm:text-7xl">{title}</h1>
       <div className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">{children}</div>

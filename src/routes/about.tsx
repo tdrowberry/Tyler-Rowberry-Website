@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import lemurPhoto from "../assets/photos/tyler-lemur-icon.jpg";
+import aboutBg from "../assets/backgrounds/about-bg.jpg";
+import headshot from "../assets/photos/tyler-professional-headshot.jpg";
 import withChild from "../assets/photos/tyler-with-child.jpg";
+import missionaryGroup from "../assets/photos/madagascar-missionary-group.jpg";
 import operationSmile from "../assets/photos/operation-smile-madagascar.jpg";
 import innovationPhoto from "../assets/photos/strategy-innovation-studio.jpeg";
 import { PageIntro } from "../components/site-shell";
@@ -24,19 +26,24 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <main className="mx-auto max-w-6xl px-5 sm:px-8">
-      <PageIntro eyebrow="Beyond the resume" title={<>Globally curious.<br /><span className="font-body font-normal italic text-muted-foreground">Grounded in service.</span></>}>
+      <PageIntro eyebrow="Beyond the resume" background={aboutBg} title={<>Globally curious.<br /><span className="font-body font-normal italic text-muted-foreground">Grounded in service.</span></>}>
         My approach to strategy has been shaped as much by listening across cultures as by models, frameworks, and boardroom conversations.
       </PageIntro>
 
       <section className="grid gap-10 border-b border-border py-14 sm:py-20 md:grid-cols-12">
-        <div className="grid grid-cols-2 gap-3 md:col-span-5 md:self-start">
-          <figure>
-            <img src={lemurPhoto} alt="Golden lemur in Madagascar foliage" className="aspect-[4/5] w-full rounded-sm object-cover object-[50%_34%]" />
-            <figcaption className="mt-3 font-mono text-[9px] uppercase text-muted-foreground">A nod to Madagascar.</figcaption>
-          </figure>
-          <figure>
-            <img src={withChild} alt="Tyler Rowberry with one of his four children" className="aspect-[4/5] w-full rounded-sm object-cover" />
-            <figcaption className="mt-3 font-mono text-[9px] uppercase text-muted-foreground">Dad to four.</figcaption>
+        <div className="md:col-span-5 md:self-start">
+          <div className="grid grid-cols-2 gap-3">
+            <figure>
+              <img src={headshot} alt="Tyler Rowberry" className="aspect-[4/5] w-full rounded-sm object-cover object-[50%_15%]" />
+            </figure>
+            <figure>
+              <img src={withChild} alt="Tyler Rowberry with one of his four children" className="aspect-[4/5] w-full rounded-sm object-cover" />
+              <figcaption className="mt-3 font-mono text-[9px] uppercase text-muted-foreground">Dad to four.</figcaption>
+            </figure>
+          </div>
+          <figure className="mt-3">
+            <img src={missionaryGroup} alt="Tyler Rowberry with fellow missionaries and local church members in Madagascar" className="aspect-[16/9] w-full rounded-sm object-cover" />
+            <figcaption className="mt-3 font-mono text-[9px] uppercase text-muted-foreground">Serving as a missionary in Madagascar.</figcaption>
           </figure>
         </div>
         <div className="space-y-6 text-lg leading-relaxed md:col-span-7 md:pt-6">
