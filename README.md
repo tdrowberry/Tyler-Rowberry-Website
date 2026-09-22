@@ -1,6 +1,12 @@
-# Tyler's Lemur Log
+# Tyler Rowberry — Professional Website
 
-https://www.linkedin.com/in/tyler-rowberry/. I want you to create a new personal website that I can use for job applications, interviews, and to update friends and family perhaps on things that are going on so have a space to put in like blog posts and updates. I want it professional as the main use case is job and have my @connector:linkedin:"LinkedIn" which is shared in there. I uploaded my @connector:linkedin:"LinkedIn" profile in the attached pdf and have one version of my resume here as well. Use the image of a lemur as my main logo/icon for the site.
+Personal site for job applications, interviews, and career updates.
+
+**Live site:** https://tdrowberry.github.io/Tyler-Rowberry-Website/
+
+Built with TanStack Start and Tailwind CSS, prerendered to static HTML, and
+deployed to GitHub Pages by `.github/workflows/deploy-pages.yml` on every
+push to `main`.
 
 Made with AI.
 
@@ -9,8 +15,8 @@ Made with AI.
 To run the site locally you need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+git clone https://github.com/tdrowberry/Tyler-Rowberry-Website.git
+cd Tyler-Rowberry-Website
+npm install
 npm run dev
 ```
