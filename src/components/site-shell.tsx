@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Download, Mail, Menu, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
-import lemurIcon from "../assets/photos/tyler-lemur-icon.jpg";
+import headshot from "../assets/photos/tyler-professional-headshot.jpg";
 import resumePdf from "../assets/photos/tyler-rowberry-resume.pdf";
 
 export const LINKEDIN_URL = "https://www.linkedin.com/in/tyler-rowberry/";
@@ -18,10 +18,10 @@ const navigation = [
   { to: "/contact", label: "Contact" },
 ] as const;
 
-export function LemurIdentity({ className = "size-9" }: { className?: string }) {
+export function SiteIdentity({ className = "size-9" }: { className?: string }) {
   return (
     <span className={`${className} block shrink-0 overflow-hidden rounded-sm ring-1 ring-foreground/15`}>
-      <img src={lemurIcon} alt="Golden lemur, Tyler Rowberry's site icon" className="size-full object-cover object-[50%_34%]" />
+      <img src={headshot} alt="Tyler Rowberry" className="size-full object-cover object-[50%_12%]" />
     </span>
   );
 }
@@ -34,7 +34,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
           <Link to="/" className="flex items-center gap-3" onClick={() => setMenuOpen(false)}>
-            <LemurIdentity />
+            <SiteIdentity />
             <span className="font-display text-sm font-extrabold uppercase sm:text-base">Tyler Rowberry</span>
           </Link>
 
@@ -85,7 +85,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <footer className="bg-foreground py-14 text-background sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:px-8 md:grid-cols-2 md:items-end">
           <div>
-            <LemurIdentity className="size-16" />
+            <SiteIdentity className="size-16" />
             <h2 className="mt-6 font-display text-4xl font-extrabold sm:text-5xl">Let&apos;s discuss<br />strategy.</h2>
             <div className="mt-6 flex flex-wrap gap-x-8 gap-y-4">
               <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="link-underline inline-flex items-center gap-2 text-lg">

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import aboutBg from "../assets/backgrounds/about-bg.jpg";
-import headshot from "../assets/photos/tyler-professional-headshot.jpg";
+import lemurPhoto from "../assets/photos/tyler-lemur-icon.jpg";
 import withChild from "../assets/photos/tyler-with-child.jpg";
 import missionaryGroup from "../assets/photos/madagascar-missionary-group.jpg";
 import operationSmile from "../assets/photos/operation-smile-madagascar.jpg";
@@ -34,7 +34,8 @@ function AboutPage() {
         <div className="md:col-span-5 md:self-start">
           <div className="grid grid-cols-2 gap-3">
             <figure>
-              <img src={headshot} alt="Tyler Rowberry" className="aspect-[4/5] w-full rounded-sm object-cover object-[50%_15%]" />
+              <img src={lemurPhoto} alt="Golden lemur in Madagascar foliage" className="aspect-[4/5] w-full rounded-sm object-cover object-[50%_34%]" />
+              <figcaption className="mt-3 font-mono text-[9px] uppercase text-muted-foreground">A nod to Madagascar.</figcaption>
             </figure>
             <figure>
               <img src={withChild} alt="Tyler Rowberry with one of his four children" className="aspect-[4/5] w-full rounded-sm object-cover" />
