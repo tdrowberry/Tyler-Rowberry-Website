@@ -8,3 +8,7 @@
 - [x] Upload the completed project to https://github.com/tdrowberry/Tyler-Rowberry-Website.git
 - [x] Publish the site online
 - [x] Add a "Made with AI" note to the footer of every page
+- [x] Tighten section/element spacing across all pages
+- [x] Move book recommendations from an embedded toggle on Writing to its own top-level "Reading" nav tab (still embedded via iframe)
+- [x] Replace the lemur hero/about photos with real photos of Tyler; keep the lemur as the small nav/footer icon only
+- [x] Add an Operation Smile story (Madagascar translator work) and an Elevatus Foundation video to the About page

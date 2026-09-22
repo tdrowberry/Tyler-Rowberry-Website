@@ -21,23 +21,23 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   return (
     <main className="mx-auto max-w-6xl px-5 sm:px-8">
-      <PageIntro eyebrow="05 / Contact" title={<>A good conversation<br /><span className="font-body font-normal italic text-muted-foreground">is a useful place to start.</span></>}>
+      <PageIntro eyebrow="06 / Contact" title={<>A good conversation<br /><span className="font-body font-normal italic text-muted-foreground">is a useful place to start.</span></>}>
         I&apos;m especially interested in corporate strategy opportunities in technology and conversations with people solving consequential problems.
       </PageIntro>
 
       <section className="grid gap-px border-x border-b border-border bg-border md:grid-cols-3">
-        <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="group bg-background p-8 transition-colors hover:bg-card sm:p-10">
-          <ArrowUpRight className="size-5 text-accent" /><p className="mt-12 font-mono text-[10px] uppercase text-muted-foreground">Professional profile</p><h2 className="mt-3 font-display text-2xl font-extrabold group-hover:text-accent">LinkedIn</h2>
+        <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="group bg-background p-6 transition-colors hover:bg-card sm:p-8">
+          <ArrowUpRight className="size-5 text-accent" /><p className="mt-8 font-mono text-[10px] uppercase text-muted-foreground">Professional profile</p><h2 className="mt-3 font-display text-2xl font-extrabold group-hover:text-accent">LinkedIn</h2>
         </a>
-        <a href={EMAIL_URL} className="group bg-background p-8 transition-colors hover:bg-card sm:p-10">
-          <Mail className="size-5 text-accent" /><p className="mt-12 font-mono text-[10px] uppercase text-muted-foreground">Direct note</p><h2 className="mt-3 break-words font-display text-xl font-extrabold group-hover:text-accent">tdrowberry@gmail.com</h2>
+        <a href={EMAIL_URL} className="group bg-background p-6 transition-colors hover:bg-card sm:p-8">
+          <Mail className="size-5 text-accent" /><p className="mt-8 font-mono text-[10px] uppercase text-muted-foreground">Direct note</p><h2 className="mt-3 break-words font-display text-xl font-extrabold group-hover:text-accent">tdrowberry@gmail.com</h2>
         </a>
-        <a href={RESUME_URL} download="Tyler-Rowberry-Resume.pdf" className="group bg-background p-8 transition-colors hover:bg-card sm:p-10">
-          <Download className="size-5 text-accent" /><p className="mt-12 font-mono text-[10px] uppercase text-muted-foreground">Background</p><h2 className="mt-3 font-display text-2xl font-extrabold group-hover:text-accent">Download résumé</h2>
+        <a href={RESUME_URL} download="Tyler-Rowberry-Resume.pdf" className="group bg-background p-6 transition-colors hover:bg-card sm:p-8">
+          <Download className="size-5 text-accent" /><p className="mt-8 font-mono text-[10px] uppercase text-muted-foreground">Background</p><h2 className="mt-3 font-display text-2xl font-extrabold group-hover:text-accent">Download résumé</h2>
         </a>
       </section>
 
-      <section className="py-20 sm:py-24">
+      <section className="py-14 sm:py-20">
         <div className="grid gap-8 md:grid-cols-12"><p className="font-mono text-[10px] uppercase text-accent md:col-span-4">Location & timing</p><p className="max-w-2xl text-xl leading-relaxed md:col-span-8">Currently based in Evanston, Illinois and completing the one-year MBA program at Northwestern University&apos;s Kellogg School of Management, graduating June 2027.</p></div>
       </section>
     </main>

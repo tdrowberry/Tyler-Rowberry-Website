@@ -64,10 +64,10 @@ function ExperiencePage() {
         Four years at L.E.K. built a foundation in rigorous analysis, executive communication, and leading through ambiguity.
       </PageIntro>
 
-      <section className="py-20 sm:py-24">
-        <div className="space-y-20">
+      <section className="py-14 sm:py-20">
+        <div className="space-y-12">
           {roles.map((item) => (
-            <article key={item.role} className="grid gap-8 border-b border-border pb-16 md:grid-cols-12">
+            <article key={item.role} className="grid gap-6 border-b border-border pb-10 md:grid-cols-12">
               <div className="md:col-span-4">
                 <p className="font-mono text-[10px] uppercase text-accent">{item.period}</p>
                 <h2 className="mt-3 font-display text-2xl font-extrabold">{item.organization}</h2>
@@ -76,7 +76,7 @@ function ExperiencePage() {
               </div>
               <div className="md:col-span-8">
                 <p className="text-xl italic leading-relaxed">{item.summary}</p>
-                <ul className="mt-8 space-y-4 text-sm leading-relaxed text-muted-foreground">
+                <ul className="mt-6 space-y-3 text-sm leading-relaxed text-muted-foreground">
                   {item.details.map((detail) => <li key={detail} className="border-l-2 border-accent/30 pl-5">{detail}</li>)}
                 </ul>
               </div>
@@ -84,10 +84,10 @@ function ExperiencePage() {
           ))}
         </div>
 
-        <div className="mt-20 grid gap-px border border-border bg-border md:grid-cols-3">
-          <article className="bg-background p-8"><p className="font-mono text-[10px] uppercase text-accent">2021</p><h3 className="mt-3 font-display text-xl font-extrabold">Weave</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">Tested product-market fit in home services and helped translate customer research into go-to-market recommendations.</p></article>
-          <article className="bg-background p-8"><p className="font-mono text-[10px] uppercase text-accent">2021</p><h3 className="mt-3 font-display text-xl font-extrabold">Peterson Ventures</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">Evaluated pre-seed and seed-stage businesses and conducted founder diligence across varied industries.</p></article>
-          <article className="bg-background p-8"><p className="font-mono text-[10px] uppercase text-accent">2020 — 2021</p><h3 className="mt-3 font-display text-xl font-extrabold">Maak Impact</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">Supported business-model and human-centered design work for a social enterprise operating in Madagascar.</p></article>
+        <div className="mt-12 grid gap-px border border-border bg-border md:grid-cols-3">
+          <article className="bg-background p-6"><p className="font-mono text-[10px] uppercase text-accent">2021</p><h3 className="mt-3 font-display text-xl font-extrabold">Weave</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">Tested product-market fit in home services and helped translate customer research into go-to-market recommendations.</p></article>
+          <article className="bg-background p-6"><p className="font-mono text-[10px] uppercase text-accent">2021</p><h3 className="mt-3 font-display text-xl font-extrabold">Peterson Ventures</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">Evaluated pre-seed and seed-stage businesses and conducted founder diligence across varied industries.</p></article>
+          <article className="bg-background p-6"><p className="font-mono text-[10px] uppercase text-accent">2020 — 2021</p><h3 className="mt-3 font-display text-xl font-extrabold">Maak Impact</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">Supported business-model and human-centered design work for a social enterprise operating in Madagascar.</p></article>
         </div>
       </section>
     </main>

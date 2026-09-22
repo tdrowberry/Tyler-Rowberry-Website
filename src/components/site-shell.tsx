@@ -2,25 +2,26 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Download, Mail, Menu, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
-import lemurAsset from "../assets/tyler-lemur.jpg.asset.json";
-import resumeAsset from "../assets/tyler-rowberry-resume.pdf.asset.json";
+import lemurIcon from "../assets/photos/tyler-lemur-icon.jpg";
+import resumePdf from "../assets/photos/tyler-rowberry-resume.pdf";
 
 export const LINKEDIN_URL = "https://www.linkedin.com/in/tyler-rowberry/";
 export const EMAIL_URL = "mailto:tdrowberry@gmail.com";
-export const RESUME_URL = resumeAsset.url;
+export const RESUME_URL = resumePdf;
 
 const navigation = [
   { to: "/", label: "Overview", number: "01" },
   { to: "/experience", label: "Experience", number: "02" },
   { to: "/about", label: "About", number: "03" },
   { to: "/writing", label: "Writing", number: "04" },
-  { to: "/contact", label: "Contact", number: "05" },
+  { to: "/reading", label: "Reading", number: "05" },
+  { to: "/contact", label: "Contact", number: "06" },
 ] as const;
 
 export function LemurIdentity({ className = "size-9" }: { className?: string }) {
   return (
     <span className={`${className} block shrink-0 overflow-hidden rounded-sm ring-1 ring-foreground/15`}>
-      <img src={lemurAsset.url} alt="Golden lemur, Tyler Rowberry's site icon" className="size-full object-cover object-[50%_34%]" />
+      <img src={lemurIcon} alt="Golden lemur, Tyler Rowberry's site icon" className="size-full object-cover object-[50%_34%]" />
     </span>
   );
 }
@@ -81,12 +82,12 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
       {children}
 
-      <footer className="bg-foreground py-20 text-background sm:py-28">
-        <div className="mx-auto grid max-w-6xl gap-16 px-5 sm:px-8 md:grid-cols-2 md:items-end">
+      <footer className="bg-foreground py-14 text-background sm:py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:px-8 md:grid-cols-2 md:items-end">
           <div>
             <LemurIdentity className="size-16" />
-            <h2 className="mt-10 font-display text-4xl font-extrabold sm:text-5xl">Let&apos;s discuss<br />strategy.</h2>
-            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
+            <h2 className="mt-6 font-display text-4xl font-extrabold sm:text-5xl">Let&apos;s discuss<br />strategy.</h2>
+            <div className="mt-6 flex flex-wrap gap-x-8 gap-y-4">
               <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="link-underline inline-flex items-center gap-2 text-lg">
                 LinkedIn <ArrowUpRight className="size-4" />
               </a>
@@ -102,7 +103,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <p className="max-w-sm text-sm leading-relaxed text-background/65 md:ml-auto">
               Based in Evanston, Illinois. Pursuing opportunities at the intersection of corporate strategy, technology, and global impact.
             </p>
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase text-background/60 md:justify-end">
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase text-background/60 md:justify-end">
               <p>© 2026 Tyler Rowberry</p>
               <p>Made with AI</p>
             </div>
@@ -115,10 +116,10 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
 export function PageIntro({ eyebrow, title, children }: { eyebrow: string; title: ReactNode; children: ReactNode }) {
   return (
-    <section className="page-reveal border-b border-border py-20 sm:py-28">
-      <p className="mb-6 font-mono text-[10px] uppercase text-accent sm:text-xs">{eyebrow}</p>
+    <section className="page-reveal border-b border-border py-14 sm:py-20">
+      <p className="mb-4 font-mono text-[10px] uppercase text-accent sm:text-xs">{eyebrow}</p>
       <h1 className="max-w-4xl text-balance font-display text-5xl font-extrabold leading-[0.98] sm:text-7xl">{title}</h1>
-      <div className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">{children}</div>
+      <div className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">{children}</div>
     </section>
   );
 }

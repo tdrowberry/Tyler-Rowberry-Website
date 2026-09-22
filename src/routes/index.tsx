@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Download } from "lucide-react";
 
-import lemurAsset from "../assets/tyler-lemur.jpg.asset.json";
+import headshot from "../assets/photos/tyler-professional-headshot.jpg";
 import { LINKEDIN_URL, RESUME_URL } from "../components/site-shell";
 
 export const Route = createFileRoute("/")({
@@ -22,32 +22,32 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="mx-auto max-w-6xl px-5 sm:px-8">
-      <section className="page-reveal grid gap-14 border-b border-border py-20 sm:py-28 lg:grid-cols-12 lg:py-32">
+      <section className="page-reveal grid gap-10 border-b border-border py-14 sm:py-20 lg:grid-cols-12 lg:py-24">
         <div className="lg:col-span-8">
-          <p className="mb-6 font-mono text-xs uppercase text-accent">Briefing note · MBA 2027</p>
+          <p className="mb-4 font-mono text-xs uppercase text-accent">Briefing note · MBA 2027</p>
           <h1 className="text-balance font-display text-5xl font-extrabold leading-[0.95] sm:text-7xl lg:text-8xl">
             Corporate strategy<br /><span className="font-body font-normal italic text-muted-foreground">for consequential change.</span>
           </h1>
-          <p className="mt-10 max-w-2xl text-xl leading-relaxed text-muted-foreground sm:text-2xl">
+          <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted-foreground sm:text-2xl">
             I&apos;m Tyler—a Kellogg MBA candidate and former L.E.K. strategy professional translating complex business priorities into clear, executable paths forward.
           </p>
-          <div className="mt-10 flex flex-wrap gap-6 font-mono text-xs uppercase">
+          <div className="mt-8 flex flex-wrap gap-6 font-mono text-xs uppercase">
             <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="link-underline inline-flex items-center gap-2">LinkedIn <ArrowUpRight className="size-4" /></a>
             <a href={RESUME_URL} download="Tyler-Rowberry-Resume.pdf" className="link-underline inline-flex items-center gap-2">Download résumé <Download className="size-4" /></a>
           </div>
         </div>
         <div className="lg:col-span-4 lg:flex lg:items-end lg:justify-end">
           <figure className="w-full max-w-sm overflow-hidden rounded-sm border border-border bg-card">
-            <img src={lemurAsset.url} alt="Golden lemur in a forest" className="aspect-[4/5] w-full object-cover" />
+            <img src={headshot} alt="Tyler Rowberry" className="aspect-[4/5] w-full object-cover object-[50%_15%]" />
             <figcaption className="flex items-center justify-between p-4 font-mono text-[9px] uppercase text-muted-foreground">
-              <span>Madagascar field identity</span><span>TR / 01</span>
+              <span>Tyler Rowberry</span><span>TR / 01</span>
             </figcaption>
           </figure>
         </div>
       </section>
 
-      <section className="border-b border-border py-20 sm:py-24">
-        <div className="mb-14 flex items-end justify-between gap-6">
+      <section className="border-b border-border py-14 sm:py-18">
+        <div className="mb-8 flex items-end justify-between gap-6">
           <h2 className="font-display text-3xl font-extrabold">Evidence</h2>
           <p className="font-mono text-[10px] uppercase text-muted-foreground">Selected outcomes</p>
         </div>
@@ -57,22 +57,22 @@ function Index() {
             ["90%", "On-time completion across 2025 strategic initiatives through executive-ready reporting and governance."],
             ["48%", "Reduction in routine IT communications after leading adoption of an AI-enabled operating model."],
           ].map(([value, text]) => (
-            <article key={value} className="bg-background p-7 sm:p-9">
+            <article key={value} className="bg-background p-6 sm:p-7">
               <p className="font-display text-4xl font-extrabold text-accent">{value}</p>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{text}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{text}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="grid gap-12 py-20 sm:py-24 md:grid-cols-12">
+      <section className="grid gap-8 py-14 sm:py-18 md:grid-cols-12">
         <div className="md:col-span-4">
           <p className="font-mono text-[10px] uppercase text-accent">Current chapter</p>
-          <h2 className="mt-4 font-display text-3xl font-extrabold">Kellogg & beyond</h2>
+          <h2 className="mt-3 font-display text-3xl font-extrabold">Kellogg & beyond</h2>
         </div>
         <div className="md:col-span-8">
           <p className="max-w-2xl text-xl leading-relaxed">At Kellogg, I&apos;m deepening my focus in strategy and finance while pursuing corporate strategy roles in technology—work that connects long-range choices with practical execution.</p>
-          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 font-mono text-xs uppercase">
+          <div className="mt-6 flex flex-wrap gap-x-8 gap-y-4 font-mono text-xs uppercase">
             <a href="/experience" className="link-underline inline-flex items-center gap-2">Career record <ArrowRight className="size-4" /></a>
             <a href="/about" className="link-underline inline-flex items-center gap-2">Beyond the résumé <ArrowRight className="size-4" /></a>
             <a href="/writing" className="link-underline inline-flex items-center gap-2">Writing & updates <ArrowRight className="size-4" /></a>

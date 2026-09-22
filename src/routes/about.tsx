@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import lemurAsset from "../assets/tyler-lemur.jpg.asset.json";
-import innovationAsset from "../assets/strategy-innovation-studio.jpeg.asset.json";
+import missionaryGroup from "../assets/photos/madagascar-missionary-group.jpg";
+import operationSmile from "../assets/photos/operation-smile-madagascar.jpg";
+import innovationPhoto from "../assets/photos/strategy-innovation-studio.jpeg";
 import { PageIntro } from "../components/site-shell";
 
 export const Route = createFileRoute("/about")({
@@ -26,46 +27,80 @@ function AboutPage() {
         My approach to strategy has been shaped as much by listening across cultures as by models, frameworks, and boardroom conversations.
       </PageIntro>
 
-      <section className="grid gap-14 border-b border-border py-20 sm:py-24 md:grid-cols-12">
+      <section className="grid gap-10 border-b border-border py-14 sm:py-20 md:grid-cols-12">
         <figure className="md:col-span-5">
-          <img src={lemurAsset.url} alt="Golden lemur in Madagascar foliage" className="aspect-[4/5] w-full rounded-sm object-cover" />
-          <figcaption className="mt-3 font-mono text-[9px] uppercase text-muted-foreground">A nod to Madagascar, and a reminder to stay curious.</figcaption>
+          <img src={missionaryGroup} alt="Tyler Rowberry with fellow missionaries and local church members in Madagascar" className="aspect-[4/3] w-full rounded-sm object-cover" />
+          <figcaption className="mt-3 font-mono text-[9px] uppercase text-muted-foreground">Serving as a missionary in Madagascar.</figcaption>
         </figure>
-        <div className="space-y-7 text-lg leading-relaxed md:col-span-7 md:pt-10">
+        <div className="space-y-6 text-lg leading-relaxed md:col-span-7 md:pt-6">
           <p>I spent two years serving as a volunteer missionary in Madagascar and Zambia. That experience sharpened my ability to listen, adapt, and build trust across unfamiliar contexts.</p>
           <p>Since then, my work has taken me from healthcare and industrial diligence in the United States to the operational realities of opening an office in Saudi Arabia. I&apos;ve also lived or worked in the United Kingdom and United Arab Emirates.</p>
-          <p className="border-l-2 border-accent pl-6 font-body italic text-muted-foreground">“Aleo very tsikalakalam-bola, toy izay very tsikalakalam-pihavanana.”</p>
+          <p className="border-l-2 border-accent pl-6 font-body italic text-muted-foreground">"Aleo very tsikalakalam-bola, toy izay very tsikalakalam-pihavanana."</p>
           <p className="font-mono text-[10px] uppercase text-muted-foreground">A Malagasy proverb about valuing relationships over material loss</p>
         </div>
       </section>
 
-      <section className="border-b border-border py-20 sm:py-24">
-        <div className="relative isolate min-h-[420px] overflow-hidden rounded-sm sm:min-h-[520px]">
-          <img src={innovationAsset.url} alt="Illustrated innovation studio with teams exploring strategy, markets, and product ideas" className="absolute inset-0 size-full object-cover" />
+      <section className="grid gap-10 border-b border-border py-14 sm:py-20 md:grid-cols-2">
+        <div>
+          <p className="font-mono text-[10px] uppercase text-accent">Social impact</p>
+          <h2 className="mt-3 font-display text-2xl font-extrabold">Operation Smile</h2>
+          <figure className="mt-5">
+            <img
+              src={operationSmile}
+              alt="Tyler Rowberry translating for a patient and family member during an Operation Smile surgical outreach in Madagascar"
+              className="aspect-[4/3] w-full rounded-sm object-cover"
+            />
+          </figure>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+            While serving in Madagascar, I volunteered as a translator for Operation Smile, a nonprofit providing free cleft lip and palate surgery to patients who couldn&apos;t otherwise access it.
+          </p>
+        </div>
+        <div>
+          <p className="font-mono text-[10px] uppercase text-accent">On video</p>
+          <h2 className="mt-3 font-display text-2xl font-extrabold">Elevatus Foundation</h2>
+          <div className="mt-5 aspect-video overflow-hidden rounded-sm border border-border bg-card">
+            <iframe
+              src="https://www.youtube.com/embed/ZHwb96BGAIg"
+              title="Stella's story — Elevatus Foundation"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="size-full"
+            />
+          </div>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+            &ldquo;Stella&apos;s story,&rdquo; a short film for the Elevatus Foundation that I directed and narrate—that&apos;s me talking with Stella. Filmed by my sister, Sasha Wilkins. One example of the social impact and nonprofit work I&apos;ve supported beyond my mission.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-b border-border py-14 sm:py-20">
+        <div className="relative isolate min-h-[360px] overflow-hidden rounded-sm sm:min-h-[440px]">
+          <img src={innovationPhoto} alt="Illustrated innovation studio with teams exploring strategy, markets, and product ideas" className="absolute inset-0 size-full object-cover" />
           <div className="absolute inset-0 bg-foreground/55" />
-          <div className="relative flex min-h-[420px] max-w-xl flex-col justify-end p-8 text-background sm:min-h-[520px] sm:p-12">
+          <div className="relative flex min-h-[360px] max-w-xl flex-col justify-end p-6 text-background sm:min-h-[440px] sm:p-9">
             <p className="font-mono text-[10px] uppercase text-background/70">How I like to work</p>
-            <h2 className="mt-4 font-display text-4xl font-extrabold sm:text-5xl">Make the complex discussable.</h2>
-            <p className="mt-6 text-lg leading-relaxed text-background/80">Good strategy creates a shared picture of the problem, invites different perspectives, and gives a team a practical path from insight to action.</p>
+            <h2 className="mt-3 font-display text-4xl font-extrabold sm:text-5xl">Make the complex discussable.</h2>
+            <p className="mt-4 text-lg leading-relaxed text-background/80">Good strategy creates a shared picture of the problem, invites different perspectives, and gives a team a practical path from insight to action.</p>
           </div>
         </div>
       </section>
 
-      <section className="grid gap-16 py-20 sm:py-24 md:grid-cols-2">
+      <section className="grid gap-10 py-14 sm:py-20 md:grid-cols-2">
         <div>
           <p className="font-mono text-[10px] uppercase text-accent">Education</p>
-          <div className="mt-8 space-y-8">
+          <div className="mt-6 space-y-6">
             <div><h2 className="font-display text-2xl font-extrabold">Kellogg School of Management</h2><p className="mt-2 text-muted-foreground">MBA candidate, Strategy & Finance · June 2027</p></div>
             <div><h2 className="font-display text-2xl font-extrabold">Brigham Young University</h2><p className="mt-2 text-muted-foreground">B.S. Strategic Management · Nonprofit Management minor · 3.8 GPA</p></div>
           </div>
         </div>
         <div>
           <p className="font-mono text-[10px] uppercase text-accent">Outside the brief</p>
-          <dl className="mt-8 divide-y divide-border border-y border-border text-sm">
-            <div className="flex justify-between gap-8 py-4"><dt className="font-display font-bold">Languages</dt><dd className="text-right text-muted-foreground">English · Malagasy</dd></div>
-            <div className="flex justify-between gap-8 py-4"><dt className="font-display font-bold">Certifications</dt><dd className="text-right text-muted-foreground">Prosci · Alteryx</dd></div>
-            <div className="flex justify-between gap-8 py-4"><dt className="font-display font-bold">Recognition</dt><dd className="text-right text-muted-foreground">Ballard Scholar · Eagle Scout</dd></div>
-            <div className="flex justify-between gap-8 py-4"><dt className="font-display font-bold">Movement</dt><dd className="text-right text-muted-foreground">U.S. National Ballroom Dance Championship finalist</dd></div>
+          <dl className="mt-6 divide-y divide-border border-y border-border text-sm">
+            <div className="flex justify-between gap-8 py-3"><dt className="font-display font-bold">Languages</dt><dd className="text-right text-muted-foreground">English · Malagasy</dd></div>
+            <div className="flex justify-between gap-8 py-3"><dt className="font-display font-bold">Certifications</dt><dd className="text-right text-muted-foreground">Prosci · Alteryx</dd></div>
+            <div className="flex justify-between gap-8 py-3"><dt className="font-display font-bold">Recognition</dt><dd className="text-right text-muted-foreground">Ballard Scholar · Eagle Scout</dd></div>
+            <div className="flex justify-between gap-8 py-3"><dt className="font-display font-bold">Movement</dt><dd className="text-right text-muted-foreground">U.S. National Ballroom Dance Championship finalist</dd></div>
           </dl>
         </div>
       </section>
