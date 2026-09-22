@@ -20,7 +20,10 @@ const srcDir = fileURLToPath(new URL("./src", import.meta.url));
 // The deploy workflow sets GH_PAGES_BASE; local dev/build defaults to "/" so
 // `npm run dev` / `npm run build` behave normally without it.
 const base = process.env["GH_PAGES_BASE"] || "/";
-const isStaticBuild = base !== "/";
+// A static host served at its own domain root (e.g. a Render Static Site) needs
+// the same prerendered build as GitHub Pages, but at base "/" instead of a
+// subpath -- so "static build" is its own flag, not just "base isn't /".
+const isStaticBuild = base !== "/" || process.env["STATIC_BUILD"] === "1";
 
 export default defineConfig({
   tanstackStart: {
