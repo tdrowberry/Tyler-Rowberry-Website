@@ -99,7 +99,7 @@ function ProjectsPage() {
         title="Mahery"
         description="A Sonny 2-style turn-based RPG I designed and built end to end—six chapters, eleven possible animal companions, and a full combat and progression system."
         note="Single-player, runs right in the frame below—no download."
-        url="https://tdrowberry.github.io/Mahery/"
+        url="https://mahery.onrender.com/"
       />
 
       <GameEmbed
@@ -107,7 +107,7 @@ function ProjectsPage() {
         title="Barnyard Dice"
         description="A multiplayer party dice game with four different modes—built to play with a group, each person joining from their own phone."
         note="This one needs other players to actually play a round—open it, create a room, and share the link or QR code with people nearby. It's hosted on a free server that naps when idle, so the first load after a quiet stretch can take 30–60 seconds to wake up."
-        url="https://rowberry-barnyard-dice.onrender.com"
+        url="https://barnyard-dice.onrender.com/"
       />
     </main>
   );
