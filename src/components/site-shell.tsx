@@ -102,7 +102,10 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <p className="max-w-sm text-sm leading-relaxed text-background/65 md:ml-auto">
               Based in Evanston, Illinois. Pursuing opportunities at the intersection of corporate strategy, technology, and global impact.
             </p>
-            <p className="mt-8 font-mono text-[10px] uppercase text-background/45">© 2026 Tyler Rowberry</p>
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase text-background/60 md:justify-end">
+              <p>© 2026 Tyler Rowberry</p>
+              <p>Made with AI</p>
+            </div>
           </div>
         </div>
       </footer>
