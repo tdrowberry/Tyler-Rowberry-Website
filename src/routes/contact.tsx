@@ -27,7 +27,7 @@ function ContactPage() {
       <section className="page-reveal border-b border-border py-14 sm:py-20">
         <p className="mb-4 font-mono text-[10px] uppercase text-accent sm:text-xs">Contact</p>
         <h1 className="max-w-2xl text-balance font-display text-4xl font-extrabold leading-[1.05] sm:text-5xl">
-          Excited to get to know someone new, please reach out.
+          I&apos;m always excited to get to know new people and ideas, reach out.
         </h1>
       </section>
 
