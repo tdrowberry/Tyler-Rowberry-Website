@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, BookOpen } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import readingBg from "../assets/backgrounds/reading-bg.jpg";
-import { PageBackground, PageIntro } from "../components/site-shell";
+import { PageBackground } from "../components/site-shell";
 
 const READING_URL = "https://tdrowberry.github.io/Rowberrys-Reading-Recommendations/";
 
@@ -25,24 +25,15 @@ function ReadingPage() {
   return (
     <main className="mx-auto max-w-6xl px-5 sm:px-8">
       <PageBackground image={readingBg}>
-      <PageIntro eyebrow="On my bookshelf" title={<>Reading<br /><span className="font-body font-normal italic text-muted-foreground">recommendations.</span></>}>
-        Books I&apos;ve read and recommend, embedded below without leaving this site.
-      </PageIntro>
+      <section className="page-reveal flex flex-wrap items-center justify-between gap-4 pb-6 pt-14 sm:pt-20">
+        <h1 className="font-display text-xl font-extrabold sm:text-2xl">Rowberry&apos;s Reading Recommendations</h1>
+        <a href={READING_URL} target="_blank" rel="noreferrer" className="link-underline inline-flex items-center gap-2 font-mono text-[10px] uppercase">
+          Open separately <ArrowUpRight className="size-3.5" />
+        </a>
+      </section>
 
       <section className="pb-14 sm:pb-20">
         <div className="border border-border bg-card">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border px-5 py-4 sm:px-6">
-            <div className="flex items-center gap-3">
-              <BookOpen className="size-5 text-accent" aria-hidden="true" />
-              <div>
-                <p className="font-display font-extrabold">Rowberry&apos;s Reading Recommendations</p>
-                <p className="mt-0.5 font-mono text-[10px] uppercase text-muted-foreground">Embedded reading list</p>
-              </div>
-            </div>
-            <a href={READING_URL} target="_blank" rel="noreferrer" className="link-underline inline-flex items-center gap-2 font-mono text-[10px] uppercase">
-              Open separately <ArrowUpRight className="size-3.5" />
-            </a>
-          </div>
           <iframe
             src={READING_URL}
             title="Rowberry's Reading Recommendations"

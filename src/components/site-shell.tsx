@@ -20,7 +20,7 @@ const navigation = [
 
 export function SiteIdentity({ className = "size-9" }: { className?: string }) {
   return (
-    <span className={`${className} block shrink-0 overflow-hidden rounded-sm ring-1 ring-foreground/15`}>
+    <span className={`${className} block shrink-0 overflow-hidden rounded-full ring-1 ring-foreground/15`}>
       <img src={headshot} alt="Tyler Rowberry" className="size-full object-cover object-[50%_12%]" />
     </span>
   );
