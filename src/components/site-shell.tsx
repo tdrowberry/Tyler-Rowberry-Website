@@ -44,7 +44,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 key={item.to}
                 to={item.to}
                 activeOptions={{ exact: item.to === "/" }}
-                className="font-mono text-[10px] uppercase text-muted-foreground transition-colors hover:text-accent"
+                className="font-mono text-xs font-bold uppercase text-muted-foreground transition-colors hover:text-accent"
                 activeProps={{ className: "text-accent" }}
               >
                 {item.label}
